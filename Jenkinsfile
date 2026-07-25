@@ -11,7 +11,7 @@ pipeline{
                 bat 'git ls-files --eol runner.sh'
                 bat 'type runner.sh'
                 bat 'findstr /n "^" runner.sh'
-                bat "docker build -t=vigneshponniyappan/selenium:latest ."
+                bat "docker build --no-cache -t=vigneshponniyappan/selenium:latest ."
             }
         }
         stage('Push Image'){
