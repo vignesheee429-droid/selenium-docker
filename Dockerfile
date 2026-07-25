@@ -12,4 +12,6 @@ ADD target/docker-resources ./
 ADD runner.sh               runner.sh
 
 # Start the runner.sh
-ENTRYPOINT sh runner.sh
+RUN chmod +x runner.sh
+
+ENTRYPOINT ["./runner.sh"]
