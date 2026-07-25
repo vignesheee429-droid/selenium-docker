@@ -8,6 +8,9 @@ pipeline{
         }
         stage('Build Image'){
             steps{
+                bat 'git ls-files --eol runner.sh'
+                bat 'type runner.sh'
+                bat 'findstr /n "^" runner.sh'
                 bat "docker build -t=vigneshponniyappan/selenium:latest ."
             }
         }
